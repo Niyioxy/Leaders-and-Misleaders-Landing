@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Leaders and Misleaders</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -13,22 +14,25 @@
       color: #333;
     }
     header {
-      background-color: #1A237E;
+      background: url('https://images.unsplash.com/photo-1581092580498-2c61c336d36f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
       color: #fff;
-      padding: 2rem;
+      padding: 4rem 2rem;
       text-align: center;
+      position: relative;
     }
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      animation: fadeInDown 1s ease-out;
+    }
+    header p {
+      font-size: 1.2rem;
+      animation: fadeInUp 1s ease-out;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
-    }
-    .highlight {
-      color: #F4B400;
     }
     .btn {
       display: inline-block;
@@ -39,18 +43,46 @@
       border-radius: 5px;
       font-weight: 600;
       transition: background-color 0.3s;
+      margin-top: 1rem;
     }
     .btn:hover {
       background-color: #005f44;
     }
     .section {
-      margin: 2rem 0;
+      margin: 3rem 0;
     }
-    .testimonials, .cta {
-      background-color: #fff;
+    .book-image {
+      width: 100%;
+      max-width: 300px;
+      display: block;
+      margin: 1rem auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    form {
+      background: #fff;
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #fff;
+      padding: 1rem;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      text-decoration: none;
+      z-index: 1000;
     }
     footer {
       text-align: center;
@@ -64,33 +96,36 @@
   <header>
     <h1>Leaders and Misleaders</h1>
     <p>The Fine Line Between Great and Terrible Bosses</p>
+    <a href="https://www.amazon.com/dp/B0DC5RZVR9" class="btn">Get the Book on Amazon</a>
   </header>
-  
+
   <div class="container">
-    <section class="section">
-      <h2>Are You a Leader or a Misleader?</h2>
-      <p>This powerful book explores the subtle but critical differences between great leadership and toxic boss behavior. Learn to inspire, not intimidate. Empower, not micromanage. Lead, not mislead.</p>
+    <section class="section" data-aos="fade-up">
+      <h2>About the Book</h2>
+      <p>Discover how the right leadership can transform workplaces and lives. This book exposes the subtle ways toxic bosses damage teams—and how great leaders lift people to greatness.</p>
+      <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=60" alt="Book Cover" class="book-image">
     </section>
 
-    <section class="section testimonials">
-      <h3>What You'll Learn</h3>
-      <ul>
-        <li>Traits of great vs. terrible bosses</li>
-        <li>Real-world case studies</li>
-        <li>How to build a leadership framework</li>
-        <li>Strategies for positive workplace culture</li>
-      </ul>
-    </section>
-
-    <section class="section cta">
-      <h3>Start Your Leadership Shift Today</h3>
-      <p><strong>Available in Kindle, Paperback, and Hardcover.</strong></p>
-      <a href="https://www.amazon.com/dp/B0DC5RZVR9" target="_blank" class="btn">Buy on Amazon</a>
+    <section class="section" data-aos="fade-up">
+      <h3>Get In Touch or Download a Free Chapter</h3>
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message"></textarea>
+        <button type="submit" class="btn">Send</button>
+      </form>
     </section>
   </div>
+
+  <a href="https://wa.me/2349087469723?text=Hi%2C%20I%E2%80%99m%20interested%20in%20your%20book%20%E2%80%98Leaders%20and%20Misleaders%E2%80%99." class="whatsapp" title="Chat on WhatsApp">💬</a>
 
   <footer>
     <p>&copy; 2025 Adeniyi. All rights reserved.</p>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
